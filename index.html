@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio src="audio/songbien.mp3" autoplay loop preload="auto" vol></audio>
+    <audio src="audio/nolon.mp3" id="bomno"></audio>
+    <audio src="audio/miss.mp3" id="miss"></audio>
+    <div id="icon"><img src="img/header.jpg" alt="" width="100%" height="160px"></div>
+    <div id="content">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <td colspan="6" id="countship">BattleShip destroyed: 0/5</td>
+            <td></td>
+            <td colspan="3" id="score">Score: 100</td>
+          </tr>
+        </thead>
+        <tbody id="initgame"></tbody>
+      </table>
+    </div>
+    <div id="winner"><img src="img/winner.png" alt="">
+    <p id="finalscore">fawfawf</p>
+    <button onclick="playAgain()" id="playagain">Play again</button>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
