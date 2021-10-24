@@ -4,7 +4,14 @@ let ship = [];
 let count = 0;
 let score = 100;
 let shipCount = 0;
-initgame();
+let text = "Xin chào Đại tướng, ngài đã sẵn sàng chiến đấu hay chưa ?";
+let speedText = 50;
+let countText = -1;
+let txtName = "Trước khi bắt đầu, Đại tướng vui lòng cho biết tên của mình: ";
+let countTextName = -1;
+let name = "";
+intro();
+// initgame();
 function createMatrix() {
   for (let i = 0; i < sizeMatrix; i++) {
     matrix[i] = [];
@@ -43,11 +50,10 @@ function initgame() {
 }
 
 function checkShip(number) {
-  
   score -= 1;
   document.getElementById("score").innerText = `Score: ${score}`;
   if (ship.indexOf(number) != -1) {
-    document.getElementById('bomno').play();
+    document.getElementById("bomno").play();
     shipCount += 1;
     document.getElementById(
       "countship"
@@ -56,19 +62,56 @@ function checkShip(number) {
       `${number}`
     ).innerHTML = `<img src="img/battleship_resize.png">`;
   } else {
-    document.getElementById('miss').play();
+    document.getElementById("miss").play();
     document.getElementById(`${number}`).innerText = "Miss";
   }
   if (shipCount == 5) {
     document.getElementById("content").style.display = "none";
     document.getElementById("winner").style.display = "block";
-    document.getElementById("finalscore").innerText = `Your score: ${score}`;
+    document.getElementById("finalscore").innerText = `Xin chúc mừng ${name} Đại tướng, điểm số của ngài là: ${score}`;
   }
 }
 
 function playAgain() {
   document.getElementById("content").style.display = "block";
   document.getElementById("winner").style.display = "none";
-  ship.splice(0,5);
+  ship.splice(0, 5);
   initgame();
+}
+
+function intro() {
+  if (countText < text.length) {
+    document.getElementById("textIntro").innerHTML += text.charAt(countText);
+    countText++;
+    setTimeout(intro, speedText);
+  }
+  if (countText == text.length) {
+    document.getElementById("ready").style.display = "block";
+  }
+}
+
+function createName() {
+  if (countTextName < txtName.length) {
+    document.getElementById("txtCreateName").innerHTML +=
+      txtName.charAt(countTextName);
+    countTextName++;
+    setTimeout(createName, speedText);
+  }
+  if (countTextName == txtName.length) {
+    document.getElementById("inputName").style.display = "block";
+    document.getElementById("btnName").style.display = "block";
+  }
+}
+function introReady() {
+  document.getElementById("showText").style.display = "none";
+  document.getElementById("createName").style.display = "block";
+  createName();
+}
+
+function acceptName() {
+  name = document.getElementById("inputName").value;
+  document.getElementById('intro').style.display='none';
+  document.getElementById('content').style.display='block';
+  initgame();
+
 }
