@@ -27,13 +27,23 @@
       </div>
       <div id="createName">
         <p id="txtCreateName"></p>
-        <input type="text" id="inputName" /><button
-          class="btn"
-          id="btnName"
-          onclick="acceptName()"
-        >
-          Ok
-        </button>
+        <div id="formName">
+          <table>
+            <tr>
+              <td id="colname">
+                <input type="text" id="inputName"/>
+              </td>
+              <td><button id="getName" onclick="getRandomName()"><img src='img/xucsac.png' id='xucsac' /></button></td>
+            </tr>
+            <tr>
+              <td>
+                <button class="btn" id="btnName" onclick="acceptName()">
+                  Bắt đầu
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
     <div id="content">

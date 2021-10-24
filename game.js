@@ -11,6 +11,7 @@ let txtName = "Trước khi bắt đầu, Đại tướng vui lòng cho biết t
 let countTextName = -1;
 let name = "";
 intro();
+createMatrix();
 // initgame();
 function createMatrix() {
   for (let i = 0; i < sizeMatrix; i++) {
@@ -20,6 +21,7 @@ function createMatrix() {
       matrix[i][j] = count;
     }
   }
+  i=0;j=0;
 }
 function createShip() {
   let countShip = 1;
@@ -30,10 +32,10 @@ function createShip() {
       countShip += 1;
     }
   }
+  console.log(ship);
 }
 
 function initgame() {
-  createMatrix();
   createShip();
   let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
   let table = "";
@@ -47,6 +49,10 @@ function initgame() {
   }
   table += `<tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>`;
   document.getElementById("initgame").innerHTML = table;
+  document.getElementById(
+    "countship"
+  ).innerText = `BattleShip destroyed: ${shipCount}/5`;
+  document.getElementById("score").innerText = `Score: ${score}`;
 }
 
 function checkShip(number) {
@@ -76,6 +82,8 @@ function playAgain() {
   document.getElementById("content").style.display = "block";
   document.getElementById("winner").style.display = "none";
   ship.splice(0, 5);
+  shipCount=0;
+  score=100;
   initgame();
 }
 
@@ -92,14 +100,12 @@ function intro() {
 
 function createName() {
   if (countTextName < txtName.length) {
-    document.getElementById("txtCreateName").innerHTML +=
-      txtName.charAt(countTextName);
+    document.getElementById("txtCreateName").innerHTML += txtName.charAt(countTextName);
     countTextName++;
     setTimeout(createName, speedText);
   }
   if (countTextName == txtName.length) {
-    document.getElementById("inputName").style.display = "block";
-    document.getElementById("btnName").style.display = "block";
+    document.getElementById("formName").style.display = "block";
   }
 }
 function introReady() {
@@ -113,5 +119,13 @@ function acceptName() {
   document.getElementById('intro').style.display='none';
   document.getElementById('content').style.display='block';
   initgame();
-
 }
+
+function getRandomName(){
+  let i = Math.round(Math.random() * 3);
+  let j = Math.round(Math.random() * 3);
+  let a=document.getElementById('inputName').value;
+  document.getElementById('inputName').value= `${firstName[i]} ${lastName[j]}`;
+}
+let firstName=['Nguyễn', 'Trần', 'Phan', 'Lê'];
+let lastName= ['Quá', 'Quân', 'Nguyên', 'Hoàng'];

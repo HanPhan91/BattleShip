@@ -84,15 +84,15 @@ td#countship{
 }
 #intro{
   width: 500px;
-  height: 500px;
+  height: 200px;
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 100px;
   font-size: 20px;
 }
 #createName{
   display: none;
 }
-#inputName, #btnName{
+#formName{
   display: none;
 }
 .btn{
@@ -110,5 +110,27 @@ input{
   width: 300px;
   margin-top: 20px;
   font-size: 18px;
+  border: 0;
+}
+table{
+  position: absolute;
+}
+table #colname input{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#xucsac:hover{
+  cursor: pointer;
+}
+#xucsac{
+  position: relative;
+}
+#xucsac:active{
+  top: -20px;
+}
+#getName{
+  background: none;
   border: 0;
 }
