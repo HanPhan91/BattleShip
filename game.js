@@ -76,6 +76,7 @@ function checkShip(number) {
     document.getElementById("winner").style.display = "block";
     document.getElementById("finalscore").innerText = `Xin chúc mừng ${name} Đại tướng, điểm số của ngài là: ${score}`;
   }
+  document.getElementById(`${number}`).removeAttribute("onclick");
 }
 
 function playAgain() {
