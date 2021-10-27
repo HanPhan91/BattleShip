@@ -31,9 +31,13 @@
           <table>
             <tr>
               <td id="colname">
-                <input type="text" id="inputName"/>
+                <input type="text" id="inputName" />
               </td>
-              <td><button id="getName" onclick="getRandomName()"><img src='img/xucsac.png' id='xucsac' /></button></td>
+              <td>
+                <button id="getName" onclick="getRandomName()">
+                  <img src="img/xucsac.png" id="xucsac" />
+                </button>
+              </td>
             </tr>
             <tr>
               <td>
@@ -51,8 +55,7 @@
         <thead>
           <tr>
             <td></td>
-            <td colspan="6" id="countship">BattleShip destroyed: 0/5</td>
-            <td></td>
+            <td colspan="7" id="countship">BattleShip destroyed: 0/10</td>
             <td colspan="3" id="score">Score: 100</td>
           </tr>
         </thead>
@@ -60,11 +63,25 @@
       </table>
     </div>
     <div id="winner">
-      <img src="img/winner.png" alt="" />
-      <p id="finalscore"></p>
-      <button class="btn" onclick="playAgain()" id="playagain">
-        Play again
-      </button>
+      <div id="win">
+        <img src="img/winner.png" alt="" />
+        <p id="finalscore"></p>
+        <button class="btn" onclick="playAgain()" id="playagain">
+          Play again
+        </button>
+      </div>
+      <div id="topScore">
+        <table id="tbTop">
+          <tr>
+            <td colspan="3"><h2>Top Score</h2></td>
+          </tr>
+          <tr>
+            <th>Xếp hạng</th>
+            <th>Người chơi</th>
+            <th>Điểm số</th>
+          </tr>
+        </table>
+      </div>
     </div>
     <script src="game.js"></script>
   </body>

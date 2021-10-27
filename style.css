@@ -20,7 +20,6 @@ table .border:hover {
   width: 500px;
   height: 500px;
   margin: 0 auto;
-  /* background:  url(img/background.jpg); */
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(img/background.jpg);
   background-repeat: no-repeat;
   background-position-x: center;
@@ -30,8 +29,8 @@ table .border:hover {
   display: none; /* ẩn content */
 }
 #content table {
-  width: 400px;
-  height: 400px;
+  width: 90%;
+  height: 90%;
   text-align: center;
   font-size: 13px;
   border-collapse: collapse;
@@ -42,8 +41,8 @@ table .border:hover {
   cursor: default;
 }
 #content table td {
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
 }
 .border {
   border: 1px solid rgb(11, 255, 105);
@@ -58,10 +57,11 @@ td#countship{
   font-size: 18px;
 }
 #winner{
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
   display: none;
 }
+
 #finalscore{
   margin-top: 30px;
   font-size: 30px;
@@ -83,12 +83,12 @@ td#countship{
   float: right;
 }
 #intro{
-  width: 500px;
+  max-width: 500px;
   height: 300px;
   margin: 0 auto;
   margin-top: 100px;
   font-size: 20px;
-
+  /* display: none; note */
 }
 #createName{
   display: none;
@@ -108,7 +108,7 @@ td#countship{
 }
 input{
   height: 30px;
-  width: 300px;
+  max-width: 300px;
   margin-top: 20px;
   font-size: 18px;
   border: 0;
@@ -136,4 +136,27 @@ table #colname input{
 #getName{
   background: none;
   border: 0;
+}
+#tbTop{
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 50px;
+  width: 500px;
+  border-collapse: collapse;
+  font-size: 18px;
+  
+  
+}
+.td-stt{
+  width: 90px;
+}
+.td-score{
+  width: 80px;
+}
+h3{
+  padding: 5px;
+}
+.td-name{
+  font-weight: bold;
 }
